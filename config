@@ -65,8 +65,8 @@ font-4 = Font Awesome 5 Free Solid:pixelsize=12;2
 font-5 = Font Awesome 5 Brands:pixelsize=12;2
 
 modules-left = bspwm xwindow
-modules-center = pacman-updates date
-modules-right = pulseaudio xkeyboard memory cpu wlan eth battery powermenu
+modules-center = date
+modules-right = xkeyboard pulseaudio memory cpu wlan eth battery pacman-updates powermenu
 
 ;separator = |
 tray-position = right
@@ -91,11 +91,12 @@ eursor-scroll = ns-resize
 type = custom/script
 exec = checkupdates | wc -l
 interval = 1000
-label = Updates: %output%
+label = %output%
 format-foregraund = ${colors.foreground}
 format-background = ${colors.background}
 format-prefix = " "
 format-prefix-foreground =  ${colors.yellow}
+format-underline = ${colors.yellow}
 # format-prefix-background = #ffbb00
 
 [module/xwindow]
@@ -170,7 +171,6 @@ label-urgent-background = ${colors.alert}
 ; Separator in between workspaces
 ; label-separator = |
 
-
 [module/mpd]
 type = internal/mpd
 format-online = <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next>
@@ -205,7 +205,8 @@ card = intel_backlight
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = " "
+;format-prefix = " "
+format-prefix = "CPU:"
 format-prefix-foreground = ${colors.foreground}
 format-underline = ${colors.green}
 label = %percentage:2%%
@@ -213,7 +214,8 @@ label = %percentage:2%%
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = " "
+;format-prefix = " "
+format-prefix = "MEM: "
 format-prefix-foreground = ${colors.foreground}
 format-underline = ${colors.green}
 label = %percentage_used%%
@@ -265,8 +267,11 @@ label = %date% %time%
 
 [module/pulseaudio]
 type = internal/pulseaudio
-format-volume = <label-volume> <bar-volume>
-label-volume =  %percentage%%
+;format-volume = <label-volume> <bar-volume>
+format-volume = <label-volume>
+format-volume-underline = ${colors.green}
+;label-volume =  %percentage%%
+label-volume = VOL: %percentage%%
 label-volume-foreground = ${root.foreground}
 label-muted = ? muted
 label-muted-foreground = #666
