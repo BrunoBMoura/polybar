@@ -64,7 +64,7 @@ font-3 = Font Awesome 5 Free:pixelsize=12;2
 font-4 = Font Awesome 5 Free Solid:pixelsize=12;2
 font-5 = Font Awesome 5 Brands:pixelsize=12;2
 
-modules-left = launcher bspwm xwindow
+modules-left = bspwm xwindow
 modules-center = date
 modules-right = xkeyboard pulseaudio memory cpu wlan eth battery pacman-updates powermenu
 
