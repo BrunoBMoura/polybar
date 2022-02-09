@@ -56,7 +56,7 @@ padding-left = 0
 padding-right = 0
 module-margin-left = 1
 module-margin-right = 1
-font-0 = Droid Sans Mono:style=Regular:pixelsize=10;2
+font-0 = Hack:style=Regular:pixelsize=10;2
 # font-1 = Font Awesome 5 Brands Regular:style=Regular:pixelsize=12;2
 font-1 = unifont:fontformat=truetype:size=14:antialias=false;2
 font-2 = siji:style=Regular:pixelsize=24;2
@@ -68,28 +68,16 @@ modules-left = bspwm xwindow
 modules-center = date
 modules-right = xkeyboard pulseaudio memory cpu wlan eth battery pacman-updates powermenu
 
-;separator = |
 tray-position = right
 tray-padding = 2
-;tray-background = #0063ff
-
-;wm-restack = bspwm
-;wm-restack = i3
-
-;override-redirect = true
-
-;scroll-up = bspwm-desknext
-;scroll-down = bspwm-deskprev
-
-;scroll-up = i3wm-wsnext
-;scroll-down = i3wm-wsprev
 
 cursor-click = pointer
 eursor-scroll = ns-resize
 
 [module/launcher]
 type = custom/text
-content =  
+content = "%{T4}f303%{T-}"
+;content =  
 ;content = 
 
 content-foreground = #{colors.foreground}
@@ -111,7 +99,7 @@ format-underline = ${colors.yellow}
 [module/xwindow]
 type = internal/xwindow
 label = %title:0:30:...%
-format = <label>
+format = [<label>]
 
 [module/xkeyboard]
 type = internal/xkeyboard
@@ -119,20 +107,8 @@ blacklist-0 = num lock
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground}
 format-prefix-underline = ${colors.green}
-label-layout = %layout%
+label-layout = %name%
 label-layout-underline = ${colors.green}
-label-indicator-padding = 2
-label-indicator-margin = 1
-label-indicator-background = ${colors.secondary}
-label-indicator-underline = ${colors.secondary}
-
-[module/filesystem]
-type = internal/fs
-interval = 25
-mount-0 = /
-label-mounted =  %free%
-label-unmounted = %mountpoint% not mounted
-label-unmounted-foreground = ${colors.foreground-alt}
 
 [module/bspwm]
 type = internal/bspwm
@@ -352,22 +328,6 @@ animation-discharging-1 = 
 animation-discharging-2 = 
 animation-discharging-foreground = ${colors.foreground-alt}
 animation-discharging-framerate = 750
-
-[module/temperature]
-type = internal/temperature
-thermal-zone = 0
-warn-temperature = 60
-format = <ramp> <label>
-format-underline = #f50a4d
-format-warn = <ramp> <label-warn>
-format-warn-underline = ${self.format-underline}
-label = %temperature-c%
-label-warn = %temperature-c%
-label-warn-foreground = ${colors.secondary}
-ramp-0 = 
-ramp-1 = 
-ramp-2 = 
-ramp-foreground = ${colors.foreground-alt}
 
 [module/powermenu]
 type = custom/menu
