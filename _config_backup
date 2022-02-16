@@ -57,13 +57,11 @@ padding-right = 0
 module-margin-left = 1
 module-margin-right = 1
 font-0 = Hack:style=Regular:pixelsize=10;2
-;font-1 = Material Design Icons Desktop;2
 font-1 = Font Awesome 5 Brands Regular:style=Regular:pixelsize=12;2
 font-2 = siji:style=Regular:pixelsize=24;2
-font-3 = Symbols Nerd Font
-;font-3 = Font Awesome 5 Free:pixelsize=12;2
-;font-4 = Font Awesome 5 Free Solid:pixelsize=12;2
-;font-5 = Font Awesome 5 Brands:pixelsize=12;2
+font-3 = Font Awesome 5 Free:pixelsize=12;2
+font-4 = Font Awesome 5 Free Solid:pixelsize=12;2
+font-5 = Font Awesome 5 Brands:pixelsize=12;2
 
 modules-left = powermenu bspwm xwindow
 modules-center = date
@@ -77,9 +75,9 @@ eursor-scroll = ns-resize
 
 [module/launcher]
 type = custom/text
-;content = %{T4}f303%{T-}
-;content =  ;
-content = ""
+content = "%{T4}f303%{T-}"
+;content =  
+;content = 
 
 content-foreground = #{colors.foreground}
 click-left = rofi -no-config -no-lazy-grab -show drun -modi drun
@@ -92,7 +90,7 @@ interval = 1000
 label = %output%
 format-foregraund = ${colors.foreground}
 format-background = ${colors.background}
-format-prefix = " "
+format-prefix = 
 format-prefix-foreground =  ${colors.yellow}
 format-underline = ${colors.yellow}
 # format-prefix-background = #ffbb00
@@ -318,7 +316,7 @@ animation-discharging-framerate = 750
 type = custom/menu
 expand-right = true
 format-spacing = 1
-label-open = ""
+label-open = MENU
 ;label-open = 
 label-open-foreground = ${colors.magenta}
 label-close = Cancel
