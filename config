@@ -41,14 +41,13 @@ dark_cyan      = #66ffff
 [bar/example]
 ;monitor = ${env:MONITOR:HDMI-1}
 width = 100%
-height = 27
-;offset-x = 1%
-offset-y = 0%
+height =28
+offset-y = 0
 radius = 0
 fixed-center = true
 background = ${colors.background}
 foreground = ${colors.foreground}
-line-size = 3
+line-size = 4
 line-color = #00564d
 border-size = 0
 border-color = ${colors.magenta}
@@ -56,11 +55,11 @@ padding-left = 0
 padding-right = 0
 module-margin-left = 1
 module-margin-right = 1
-font-0 = Hack:style=Regular:pixelsize=10;2
+font-0 = Hack:style=Regular:pixelsize=12;2
 ;font-1 = Material Design Icons Desktop;2
 font-1 = Font Awesome 5 Brands Regular:style=Regular:pixelsize=12;2
 font-2 = siji:style=Regular:pixelsize=24;2
-font-3 = Symbols Nerd Font
+font-3 = Symbols Nerd Font:pixelsize=16
 ;font-3 = Font Awesome 5 Free:pixelsize=12;2
 ;font-4 = Font Awesome 5 Free Solid:pixelsize=12;2
 ;font-5 = Font Awesome 5 Brands:pixelsize=12;2
@@ -75,27 +74,16 @@ tray-padding = 2
 cursor-click = pointer
 eursor-scroll = ns-resize
 
-[module/launcher]
-type = custom/text
-;content = %{T4}f303%{T-}
-;content =  ;
-content = ""
-
-content-foreground = #{colors.foreground}
-click-left = rofi -no-config -no-lazy-grab -show drun -modi drun
-click-right = rofi -no-config -no-lazy-grab -show drun -modi drun
-
 [module/pacman-updates]
 type = custom/script
-exec = checkupdates | wc -l
+exec = /bin/bash $HOME/.scripts/polybar_pacman_update.sh
 interval = 1000
 label = %output%
 format-foregraund = ${colors.foreground}
 format-background = ${colors.background}
-format-prefix = " "
+format-prefix = " "
 format-prefix-foreground =  ${colors.yellow}
-format-underline = ${colors.yellow}
-# format-prefix-background = #ffbb00
+format-underline = ${colors.green}
 
 [module/xwindow]
 type = internal/xwindow
@@ -105,10 +93,11 @@ format = [<label>]
 [module/xkeyboard]
 type = internal/xkeyboard
 blacklist-0 = num lock
-format-prefix = 
-format-prefix-foreground = ${colors.foreground}
+format-prefix = " "
+format-prefix-foreground = ${colors.yellow}
 format-prefix-underline = ${colors.green}
 label-layout = %name%
+label-layout-foreground = ${colors.foreground}
 label-layout-underline = ${colors.green}
 
 [module/bspwm]
@@ -190,18 +179,17 @@ card = intel_backlight
 [module/cpu]
 type = internal/cpu
 interval = 2
-;format-prefix = " "
-format-prefix = "CPU:"
-format-prefix-foreground = ${colors.foreground}
+format-prefix = " "
+format-prefix-foreground = ${colors.yellow}
 format-underline = ${colors.green}
 label = %percentage:2%%
 
 [module/memory]
 type = internal/memory
 interval = 2
-;format-prefix = " "
-format-prefix = "MEM: "
-format-prefix-foreground = ${colors.foreground}
+;format-p:refix = " "
+format-prefix = " "
+format-prefix-foreground = ${colors.yellow}
 format-underline = ${colors.green}
 label = %percentage_used%%
 
@@ -222,7 +210,7 @@ ramp-signal-1 = 
 ramp-signal-2 = 
 ramp-signal-3 = 
 ramp-signal-4 = 
-ramp-signal-foreground = ${colors.foreground}
+ramp-signal-foreground = ${colors.yellow}
 
 [module/eth]
 type = internal/network
@@ -245,20 +233,22 @@ date =
 date-alt = " %d/%m/%Y"
 time = %H:%M
 time-alt = %H:%M:%S
-format-prefix = 
-format-prefix-foreground = ${colors.foreground}
+;format-prefix = 
+format-prefix = " "
+format-prefix-foreground = ${colors.yellow}
 format-underline = ${colors.green}
 label = %date% %time%
 
 [module/pulseaudio]
 type = internal/pulseaudio
-;format-volume = <label-volume> <bar-volume>
+prefix = "aaa"
 format-volume = <label-volume>
 format-volume-underline = ${colors.green}
-label-volume = VOL: %percentage%%
-label-volume-foreground = ${root.foreground}
-label-muted = VOL: MUTED
-label-muted-foreground = ${colors.foreground}
+label-volume-prefix = "any"
+label-volume = "墳 %percentage%%"
+label-volume-foreground = ${colors.yellow}
+label-muted = "ﱝ "
+label-muted-foreground = ${colors.yellow}
 label-muted-underline = ${colors.green}
 bar-volume-empty-foreground = ${colors.foreground-alt}
 
@@ -293,11 +283,11 @@ battery = BAT1
 adapter = ADP1
 full-at = 98
 format-charging = <animation-charging> <label-charging>
-format-charging-underline = ${colors.yellow}
+format-charging-underline = ${colors.green}
 format-discharging = <animation-discharging> <label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
 format-full-prefix = " "
-format-full-prefix-foreground = ${colors.foreground}
+format-full-prefix-foreground = ${colors.yellow}
 format-full-underline = ${self.format-charging-underline}
 ramp-capacity-0 = 
 ramp-capacity-1 = 
@@ -319,7 +309,6 @@ type = custom/menu
 expand-right = true
 format-spacing = 1
 label-open = ""
-;label-open = 
 label-open-foreground = ${colors.magenta}
 label-close = Cancel
 label-close-foreground = ${colors.secondary}
