@@ -78,8 +78,8 @@ label = %output%
 format-foregraund = ${colors.foreground}
 format-background = ${colors.background}
 format-prefix = " "
-format-prefix-foreground =  ${colors.yellow}
-format-underline = ${colors.green}
+format-prefix-foreground =  ${colors.dark_yellow}
+format-underline = ${colors.dark_yellow}
 
 [module/xwindow]
 type = internal/xwindow
@@ -90,26 +90,31 @@ format = [<label>]
 type = internal/xkeyboard
 blacklist-0 = num lock
 format-prefix = " "
-format-prefix-foreground = ${colors.yellow}
-format-prefix-underline = ${colors.green}
+format-prefix-foreground = ${colors.dark_yellow}
+format-prefix-underline = ${colors.dark_yellow}
 label-layout = %layout%
 label-layout-foreground = ${colors.foreground}
-label-layout-underline = ${colors.green}
+label-layout-underline = ${colors.dark_yellow}
 
 [module/bspwm]
 type = internal/bspwm
 label-focused = %index%
-label-focused-background = ${colors.background-alt}
+label-focused-background = ${colors.background}
+label-focused-foreground = ${colors.magenta}
 label-focused-underline= ${colors.magenta}
-label-focused-padding = 2
+label-focused-padding = 3
+
 label-occupied = %index%
-label-occupied-padding = 2
+label-occupied-foreground = ${colors.foreground-alt}
+label-occupied-padding = 3
+label-occupied-underline = ${colors.foreground-alt}
+
 label-urgent = %index%!
 label-urgent-backround = ${colors.red}
-label-urgent-padding = 2
+label-urgent-padding = 3
 label-empty = %index%
 label-empty-foreground = ${colors.foreground-alt}
-label-empty-padding = 2
+label-empty-padding = 3
 
 ; Only show workspaces on the same output as the bar
 ; pin-workspaces = true
@@ -176,8 +181,8 @@ card = intel_backlight
 type = internal/cpu
 interval = 2
 format-prefix = " "
-format-prefix-foreground = ${colors.yellow}
-format-underline = ${colors.green}
+format-prefix-foreground = ${colors.dark_yellow}
+format-underline = ${colors.dark_yellow}
 label = %percentage:2%%
 
 [module/memory]
@@ -185,8 +190,8 @@ type = internal/memory
 interval = 2
 ;format-p:refix = " "
 format-prefix = " "
-format-prefix-foreground = ${colors.yellow}
-format-underline = ${colors.green}
+format-prefix-foreground = ${colors.dark_yellow}
+format-underline = ${colors.dark_yellow}
 label = %percentage_used%%
 
 [module/wlan]
@@ -231,22 +236,22 @@ time = %H:%M
 time-alt = %H:%M:%S
 ;format-prefix = 
 format-prefix = " "
-format-prefix-foreground = ${colors.yellow}
-format-underline = ${colors.green}
+format-prefix-foreground = ${colors.dark_yellow}
+format-underline = ${colors.dark_yellow}
 label = %date% %time%
 
 [module/pulseaudio]
 type = internal/pulseaudio
 prefix = "aaa"
 format-volume = <label-volume>
-format-volume-underline = ${colors.green}
+format-volume-underline = ${colors.dark_yellow}
 label-volume-prefix = "any"
 label-volume = "墳 %percentage%%"
-label-volume-foreground = ${colors.yellow}
+label-volume-foreground = ${colors.dark_yellow}
 label-muted = "ﱝ "
-label-muted-foreground = ${colors.yellow}
-label-muted-underline = ${colors.green}
-bar-volume-empty-foreground = ${colors.foreground-alt}
+label-muted-foreground = ${colors.dark_yellow}
+label-muted-underline = ${colors.dark_yellow}
+bar-volume-empty-foreground = ${colors.dark_yellow-alt}
 
 [module/alsa]
 type = internal/alsa
@@ -303,7 +308,7 @@ animation-discharging-framerate = 750
 [module/powermenu]
 type = custom/menu
 expand-right = true
-format-spacing = 1
+format-spacing = 2
 label-open = ""
 label-open-foreground = ${colors.magenta}
 label-close = Cancel
