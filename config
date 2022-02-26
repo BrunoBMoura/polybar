@@ -17,8 +17,8 @@
 ;==========================================================
 
 [colors]
-;background = ${xrdb:color0:#222}
-background     = #dd0d0d0d
+;background     = #dd0d0d0d
+background     = #1a1a1a
 background-alt = #d75f00
 foreground     = #ffffd7
 foreground-alt = #d7afaf
@@ -47,7 +47,7 @@ radius = 0
 fixed-center = true
 background = ${colors.background}
 foreground = ${colors.foreground}
-line-size = 4
+line-size = 2
 line-color = #00564d
 border-size = 0
 border-color = ${colors.magenta}
@@ -78,8 +78,8 @@ label = %output%
 format-foregraund = ${colors.foreground}
 format-background = ${colors.background}
 format-prefix = " "
-format-prefix-foreground =  ${colors.dark_yellow}
-format-underline = ${colors.dark_yellow}
+format-prefix-foreground =  ${colors.magenta}
+format-underline = ${colors.magenta}
 
 [module/xwindow]
 type = internal/xwindow
@@ -90,11 +90,11 @@ format = [<label>]
 type = internal/xkeyboard
 blacklist-0 = num lock
 format-prefix = " "
-format-prefix-foreground = ${colors.dark_yellow}
-format-prefix-underline = ${colors.dark_yellow}
+format-prefix-foreground = ${colors.magenta}
+format-prefix-underline = ${colors.magenta}
 label-layout = %layout%
 label-layout-foreground = ${colors.foreground}
-label-layout-underline = ${colors.dark_yellow}
+label-layout-underline = ${colors.magenta}
 
 [module/bspwm]
 type = internal/bspwm
@@ -107,7 +107,7 @@ label-focused-padding = 3
 label-occupied = %index%
 label-occupied-foreground = ${colors.foreground-alt}
 label-occupied-padding = 3
-label-occupied-underline = ${colors.foreground-alt}
+label-occupied-underline = ${colors.background}
 
 label-urgent = %index%!
 label-urgent-backround = ${colors.red}
@@ -181,8 +181,8 @@ card = intel_backlight
 type = internal/cpu
 interval = 2
 format-prefix = " "
-format-prefix-foreground = ${colors.dark_yellow}
-format-underline = ${colors.dark_yellow}
+format-prefix-foreground = ${colors.magenta}
+format-underline = ${colors.magenta}
 label = %percentage:2%%
 
 [module/memory]
@@ -190,8 +190,8 @@ type = internal/memory
 interval = 2
 ;format-p:refix = " "
 format-prefix = " "
-format-prefix-foreground = ${colors.dark_yellow}
-format-underline = ${colors.dark_yellow}
+format-prefix-foreground = ${colors.magenta}
+format-underline = ${colors.magenta}
 label = %percentage_used%%
 
 [module/wlan]
@@ -199,7 +199,7 @@ type = internal/network
 interface = wlan0
 interval = 3.0
 format-connected = <ramp-signal> <label-connected>
-format-connected-underline = ${colors.green}
+format-connected-underline = ${colors.magenta}
 label-connected = %essid%
 format-disconnected =
 ;format-disconnected = <label-disconnected>
@@ -211,7 +211,7 @@ ramp-signal-1 = 
 ramp-signal-2 = 
 ramp-signal-3 = 
 ramp-signal-4 = 
-ramp-signal-foreground = ${colors.yellow}
+ramp-signal-foreground = ${colors.magenta}
 
 [module/eth]
 type = internal/network
@@ -236,21 +236,21 @@ time = %H:%M
 time-alt = %H:%M:%S
 ;format-prefix = 
 format-prefix = " "
-format-prefix-foreground = ${colors.dark_yellow}
-format-underline = ${colors.dark_yellow}
+format-prefix-foreground = ${colors.magenta}
+format-underline = ${colors.magenta}
 label = %date% %time%
 
 [module/pulseaudio]
 type = internal/pulseaudio
 prefix = "aaa"
 format-volume = <label-volume>
-format-volume-underline = ${colors.dark_yellow}
+format-volume-underline = ${colors.magenta}
 label-volume-prefix = "any"
 label-volume = "墳 %percentage%%"
-label-volume-foreground = ${colors.dark_yellow}
+label-volume-foreground = ${colors.magenta}
 label-muted = "ﱝ "
-label-muted-foreground = ${colors.dark_yellow}
-label-muted-underline = ${colors.dark_yellow}
+label-muted-foreground = ${colors.magenta}
+label-muted-underline = ${colors.magenta}
 bar-volume-empty-foreground = ${colors.dark_yellow-alt}
 
 [module/alsa]
@@ -284,7 +284,7 @@ battery = BAT1
 adapter = ADP1
 full-at = 98
 format-charging = <animation-charging> <label-charging>
-format-charging-underline = ${colors.green}
+format-charging-underline = ${colors.magenta}
 format-discharging = <animation-discharging> <label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
 format-full-prefix = " "
@@ -293,16 +293,16 @@ format-full-underline = ${self.format-charging-underline}
 ramp-capacity-0 = 
 ramp-capacity-1 = 
 ramp-capacity-2 = 
-ramp-capacity-foreground = ${colors.foreground-alt}
+ramp-capacity-foreground = ${colors.magenta}
 animation-charging-0 = 
 animation-charging-1 = 
 animation-charging-2 = 
-animation-charging-foreground = ${colors.foreground-alt}
+animation-charging-foreground = ${colors.magenta}
 animation-charging-framerate = 750
 animation-discharging-0 = 
 animation-discharging-1 = 
 animation-discharging-2 = 
-animation-discharging-foreground = ${colors.foreground-alt}
+animation-discharging-foreground = ${colors.magenta}
 animation-discharging-framerate = 750
 
 [module/powermenu]
